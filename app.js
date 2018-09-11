@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 var exphbs = require('express-handlebars');
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/rotten-potatoes', { useMongoClient: true });
 
@@ -30,7 +33,7 @@ app.get('/', (req, res) => {
         console.log(err);
       })
   })
-})
+//})
 
 // NEW
 app.get('/reviews/new', (req, res) => {
@@ -54,6 +57,6 @@ app.post('/reviews', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log('App listening on port 3000!')
 })
