@@ -1,6 +1,12 @@
 <form method="POST" action="/reviews">
-  <fieldset>
-    <legend>New Review</legend>
+  {{> reviews-form}}
+
+  <!-- BUTTON -->
+  <p>
+    <button type="submit">Save Review</button>
+  </p>
+
+</form>
     <!-- TITLE -->
     <p>
       <label for="review-title">Title</label><br>
